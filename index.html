@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/bootstrap/js/bootstrap.min.js">
+   
+    <style>
+        * {
+            scroll-behavior: smooth;
+        }
+
+        .headersection {
+            position: fixed;
+            width: 1355px;
+            height: 50px;
+
+
+        }
+
+        main>h1 {
+            text-align: center;
+            top: -50px;
+            display: inline;
+            position: relative;
+            left: 550px;
+            top: -250px;
+            font-size: 3.2rem;
+            font-weight: 700;
+
+        }
+
+        span {
+            color: orange;
+        }
+
+        main>p {
+            position: relative;
+            left: 550px;
+            top: -250px;
+        }
+
+        .customertopic {
+            text-align: center;
+            color: orange;
+
+        }
+
+        .itemtopic {
+            text-align: center;
+            color: orange;
+        }
+
+        .placeordertopic {
+            text-align: center;
+            color: orange;
+        }
+
+        .maincontainer {
+            display: flex;
+            justify-content: space-around;
+            position: relative;
+        }
+
+        .invoice {
+            width: 350px;
+            height: 500px;
+            border: 2px solid black;
+
+        }
+
+        .itemselect {
+            width: 350px;
+            height: 500px;
+            border: 2px solid black;
+        }
+
+        .orderdetails {
+            width: 350px;
+            height: 500px;
+            border: 2px solid black;
+        }
+
+        .invoice>h3 {
+            color: white;
+            text-align: center;
+            background-color: #F97B22;
+        }
+
+        .itemselect>h3 {
+            color: white;
+            text-align: center;
+            background-color: #F97B22;
+        }
+
+
+
+        .total {
+            color: blue;
+            font-weight: bold;
+            font-size: 2.5rem;
+        }
+
+        .subtotal {
+            color: red;
+            font-weight: bold;
+            font-size: 2.5rem;
+        }
+
+        .total>span {
+            color: blue;
+            font-weight: bold;
+        }
+
+        .subtotal>span {
+            color: red;
+            font-weight: bold;
+        }
+
+        .balance {
+            color: #F97B22;
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+
+        .orderdetails>button>button {
+            display: flex;
+            justify-content: space-around;
+            margin-left: 250px;
+
+        }
+        .headersection{
+            width: 100%;
+            position: fixed;
+            z-index: 100;
+        }
+
+        /* <section class="placeorder">
+        <div class="maincontainer">
+            <div class="invoice"></div>
+            <div class="itemselect"></div>
+            <div class="orderdetails"></div>
+        </div>
+        
+
+    </section>*/
+    #item-section{
+        display: none;
+    }
+
+    #placeorder-section{
+        display: none;
+    }
+    #customer-section{
+        display: none;
+    }
+    </style>
+
+</head>
+
+<body>
+    <!---Home Section design-->
+   
+        <div class="headersection" id="header-section">
+            <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+                <a href="" class="navbar-brand">GROCI</a>
+                <button class="navbar-toggler" data-toggle="collapse" data-target="#blacky"><span
+                        class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse justify-content-center" id="blacky">
+                    <ul class="navbar-nav">
+                        <li class="nav-item "><a href="#" class="nav-link active" id="linkHome">Home</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link " id="linkCustomer">Customer</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link" id="linkItem">Item</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link" id="linkplace">Place Order</a></li>
+                    </ul>
+                </div>
+
+
+            </nav>
+        </div>
+        <main>
+        <section class="home" id="home">
+
+        <div class="pic">
+            <img src="assets/images/main pic.jpg" alt="main pic" width="500px" height="500px" id="mainpic">
+        </div>
+        <main id="home-maincontent">
+            <h1>SHOP FASTER WITH <span>GROCI</span> </h1>
+            <p>We Offer High Quality Groceries For You!</p>
+        </main>
+
+    </section>
+    <br><br><br><br><br><br><br><br><br>
+    <!--Customer section-->
+    
+    <section class="customer" id="customer-section">
+        <h1 class="customertopic">Manage Customer</h1>
+
+        <!---<nav class="navbar bg-body-tertiary container-fluid">
+        <div class="container-fluid align-items-center">
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-secondary" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>-->
+
+
+        <div class="container-fluid px-4">
+            <div class="row g-3 my-2">
+                <form class="row g-3">
+                    <div class="col-md-6">
+                        <label for="custID" class="form-label">Customer ID</label>
+                        <input type="text" class="form-control" id="custID">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="custname" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="custname">
+                    </div>
+                    <div class="col-12">
+                        <label for="inputAddress" class="form-label">Address</label>
+                        <input type="text" class="form-control" id="custAddress" placeholder="1234 Main St">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputSalary" class="form-label">Salary</label>
+                        <input type="text" class="form-control" id="Salary">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputGender" class="form-label">Gender</label>
+                        <select id="inputGender" class="form-select">
+                            <option selected>Male</option>
+                            <option>Female</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <label for="inputAge" class="form-label">Age</label>
+                        <input type="text" class="form-control" id="inputAge">
+                    </div>
+                    <div class="col-12">
+                        <button type="button" class="btn btn-primary" id="btn-addcust">Add</button>
+                        <button type="submit" class="btn btn-success">Update</button>
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        
+      
+        <div class="row my-5 container-fluid">
+            <h3 class="fs-4 mb-3">All Customers</h3>
+            <div class="col">
+                <table class="table bg-white rounded shadow-sm  table-hover " id="custTable">
+                    <thead>
+                        <tr>
+                            <th scope="col">Customer ID</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Address</th>
+                            <th scope="col">Salary</th>
+                            <th scope="col">Gender</th>
+                            <th scope="col">Age</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- <tr>
+                        <td id="cId"></td>
+                        <td id="cName"> </td>
+                        <td id="address"> </td>
+                        <td id="Salary"></td>
+                        <td id="gender"></td>
+                        <td id="age"></td>
+                    </tr>-->
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+        </div>
+    </section>
+       <!-- <script>document.getElementById('btn-addcust').addEventListener('click', function () {
+
+                $("#custTable").append(`
+            <tr>
+                <td>${$("#custID").val()}</td>
+                <td>${$("#custname").val()}</td>
+                <td>${$("#custAddress").val()}</td> 
+                <td>${$("#Salary").val()}</td>
+                <td>${$("#inputGender").val()}</td>
+                <td>${$("#inputAge").val()}</td>
+            </tr>`);
+            })
+
+        </script>
+    
+
+
+    <br><br><br><br><br><br><br><br><br>
+
+    <!-Item Section-->
+    <section class="item" id="item-section">
+        <h1 class="itemtopic">Manage Item</h1>
+
+        <!---<nav class="navbar bg-body-tertiary container-fluid">
+        <div class="container-fluid align-items-center">
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-secondary" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>-->
+
+
+        <div class="container-fluid px-4">
+            <div class="row g-3 my-2">
+                <form class="row g-3">
+                    <div class="col-md-6">
+                        <label for="itemcode" class="form-label">Item Code</label>
+                        <input type="text" class="form-control" id="itemcode">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="itemname" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="itemname">
+                    </div>
+                    <div class="col-12">
+                        <label for="price" class="form-label">price</label>
+                        <input type="text" class="form-control" id="price" placeholder="1234 Main St">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="qty" class="form-label">Item QTY</label>
+                        <input type="number" class="form-control" id="qty">
+                    </div>
+                    <div class="col-md-4">
+
+                        <div class="col-12">
+                            <button type="button" class="btn btn-primary" id="btn-additem">Add</button>
+                            <button type="submit" class="btn btn-success">Update</button>
+                            <button type="submit" class="btn btn-danger ">Delete</button>
+                        </div>
+                </form>
+            </div>
+        </div>
+        <div class="row my-5 container-fluid">
+            <h3 class="fs-4 mb-3">All Item</h3>
+            <div class="col">
+                <table class="table bg-white rounded shadow-sm  table-hover" id="itemtbl">
+                    <thead>
+                        <tr>
+                            <th scope="col">Item Code</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">price</th>
+
+                            <th scope="col">itemQTY</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- <tr>
+                        <td id="cId"></td>
+                        <td id="cName"> </td>
+                        <td id="address"> </td>
+                        <td id="Salary"></td>
+                        <td id="gender"></td>
+                        <td id="age"></td>
+                    </tr>-->
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+        </div>
+      <!--  <script>document.getElementById('btn-additem').addEventListener('click', function () {
+
+                $("#itemtbl").append(`
+            <tr>
+                <td>${$("#itemcode").val()}</td>
+                <td>${$("#itemname").val()}</td>
+                <td>${$("#price").val()}</td>
+                <td>${$("#qty").val()}</td>
+                
+            </tr>`);
+            })
+
+        </script>-->
+    </section>
+    <br>
+    <!--Place Order-->
+    <section class="placeorder" id="placeorder-section">
+        <h1 class="placeordertopic">Place Order</h1>
+        <div class="maincontainer">
+            <div class="invoice">
+                <h3>Invoice Details</h3>
+                <div class="input-group input-group-sm mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-sm"></span>
+                    <input type="text" class="form-control" aria-label="Sizing example input"
+                        aria-describedby="inputGroup-sizing-sm" placeholder="Order Id">
+                </div>
+
+                <div class="input-group input-group-sm mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-sm"></span>
+                    <input type="text" class="form-control" aria-label="Sizing example input"
+                        aria-describedby="inputGroup-sizing-sm" placeholder="Customer Id">
+                </div>
+
+                <div class="input-group input-group-sm mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-sm"></span>
+                    <input type="date" class="form-control" aria-label="Sizing example input"
+                        aria-describedby="inputGroup-sizing-sm" placeholder="Date">
+                </div>
+
+                <div class="input-group input-group-sm mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-sm"></span>
+                    <input type="text" class="form-control" aria-label="Sizing example input"
+                        aria-describedby="inputGroup-sizing-sm" placeholder="Name">
+                </div>
+                <div class="input-group input-group-sm mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-sm"></span>
+                    <input type="text" class="form-control" aria-label="Sizing example input"
+                        aria-describedby="inputGroup-sizing-sm" placeholder="Address">
+                </div>
+            </div>
+            <div class="itemselect">
+                <h3>Item Select</h3>
+                <div class="input-group input-group-sm mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-sm"></span>
+                    <input type="text" class="form-control" aria-label="Sizing example input"
+                        aria-describedby="inputGroup-sizing-sm" placeholder="Item Code" id="itemcodeplceorder">
+                </div>
+
+                <div class="input-group input-group-sm mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-sm"></span>
+                    <input type="text" class="form-control" aria-label="Sizing example input"
+                        aria-describedby="inputGroup-sizing-sm" placeholder="Item Name" id="itemnameplaceorder">
+                </div>
+
+                <div class="input-group input-group-sm mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-sm"></span>
+                    <input type="text" class="form-control" aria-label="Sizing example input"
+                        aria-describedby="inputGroup-sizing-sm" placeholder="Price" id="itempriceplaceorder">
+                </div>
+
+                <div class="input-group input-group-sm mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-sm"></span>
+                    <input type="number" class="form-control" aria-label="Sizing example input"
+                        aria-describedby="inputGroup-sizing-sm" placeholder="QTY" id="itemqtyplaceorder">
+                </div>
+
+            </div>
+            <div class="orderdetails">
+                <p class="total">TOTAL : <span id="total">0/=</span></p>
+                <p class="subtotal">SUBTOTAL:<span id="subtotal">0/=</span></p>
+
+                <div class="input-group input-group-sm mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-sm"></span>
+                    <input type="text" class="form-control" aria-label="Sizing example input"
+                        aria-describedby="inputGroup-sizing-sm" placeholder="Cash" id="cash">
+                </div>
+
+                <div class="input-group input-group-sm mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-sm"></span>
+                    <input type="number" class="form-control" aria-label="Sizing example input"
+                        aria-describedby="inputGroup-sizing-sm" placeholder="Discount" id="discount">
+                </div>
+
+                <div class="input-group input-group-sm mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-sm"></span>
+
+                </div>
+                <button type="button" class="btn btn-primary" id="btn-add">Add</button>
+                <button type="button" class="btn btn-success " id="btn-purchace" data-toggle="modal" data-target="#basicmodal">Purchace</button>
+                <p class="balance">Balance:<span id="balance">0/=</span></p>
+
+            </div>
+
+        </div>
+
+
+        <div class="row my-5 container">
+
+            <div class="col">
+                <table class="table bg-white rounded shadow-sm  table-hover" id="tblplaceorder">
+                    <thead>
+                        <tr>
+                            <th scope="col">Item Code</th>
+                            <th scope="col">Item Name</th>
+                            <th scope="col">price</th>
+                            <th scope="col">QTY</th>
+                            <th scope="col">Total</th>
+
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- <tr>
+                <td id="cId"></td>
+                <td id="cName"> </td>
+                <td id="address"> </td>
+                <td id="Salary"></td>
+                <td id="gender"></td>
+                <td id="age"></td>
+            </tr>-->
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+        </div>
+       <!-- <script>
+            document.getElementById('btn-add').addEventListener('click', function () {
+                let price = document.getElementById("itempriceplaceorder").value;
+                let qty = document.getElementById("itemqtyplaceorder").value;
+                let tot = price * qty;
+                document.getElementById("total").innerHTML = tot;
+                let ftot = document.getElementById("total").value = tot;
+
+
+
+
+                console.log(tot);
+                $("#tblplaceorder").append(`
+    <tr>
+        <td>${$("#itemcodeplceorder").val()}</td>
+        <td>${$("#itemnameplaceorder").val()}</td>
+        <td>${$("#itempriceplaceorder").val()}</td>
+        <td>${$("#itemqtyplaceorder").val()}</td>
+        <td>${$("#total").val()}</td>
+     
+        
+        
+    </tr>`);
+            })
+
+
+
+        </script>-->
+
+<!--        <script>
+            document.getElementById('btn-purchace').addEventListener('click', function () {
+                
+                    /*calculate discount */
+                    let price = document.getElementById("itempriceplaceorder").value;
+                    let discount = document.getElementById("discount").value / 100;
+                    let subtot = price - (price * discount)
+
+
+                    document.getElementById("subtotal").innerHTML = subtot;
+
+                    /*calculate cash*/
+                    let cash = document.getElementById("cash").value;
+                    let balance = cash - subtot;
+                    console.log(balance);
+
+                    document.getElementById("balance").innerHTML = balance;
+
+                    
+
+                  
+
+
+            })
+        </script>-->
+      <!-- <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+            <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+            </symbol>
+            <symbol id="info-fill" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+            </symbol>
+            <symbol id="exclamation-triangle-fill" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+            </symbol>
+          </svg>
+          
+         
+          <div class="alert alert-success d-flex align-items-center" role="alert">
+            <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
+            <div>
+              Order Place Successfully
+            </div>
+          </div>
+          
+          </div>--> 
+
+
+    </section>
+</main>
+
+
+
+
+
+    <script src="assets/lib/jquery-3.6.4.min.js"></script>
+    <script src="assets/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <script src="assets/lib/jquery-3.6.4.min.js"></script>
+
+</body>
+
+</html>
