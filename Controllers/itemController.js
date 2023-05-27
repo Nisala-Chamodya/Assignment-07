@@ -78,6 +78,10 @@ function loadData() {
        $('table tbody tr td').remove();
 
     let item_data_arr = JSON.parse(per_data);
+
+    console.log("IIIIIIIIIIIIII: ", item_data_arr);
+    console.log("per_data: ", per_data);
+
     if(per_data){
         item_data_arr.map((value, index) => {
             var row = "<tr>" +
@@ -86,6 +90,8 @@ function loadData() {
                 "<td>" + value.price + "</td>" +
                 "<td>" + value.itemQTY + "</td>" +
                 "</tr>";
+
+            console.log('LLLLLL: ', $('#itemtbl'))
 
             $('#itemtbl').append(row);
         });

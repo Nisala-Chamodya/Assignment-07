@@ -1,4 +1,20 @@
 import { Customer } from "../Modals/Customer.js";
+/* export class customerController{
+  constructor(){
+    $('#btnadd').click(this.saveCustomer);
+     $('#btnupdate').click(this.updateCustomer);
+      $('#btnDelete').click(this.deleteCustomer);
+  }
+  saveCustomer(){
+    console.log("save Customer");
+  }
+ updateCustomer(){
+  console.log("Update Customer");
+ }
+  deleteCustomer(){
+    console.log("delete Customer");
+  }
+} */
 
 //dan meyawa use karanna pulwannn😊
 var customer = "CUSTOMER";
@@ -243,4 +259,4 @@ function disableBtn() {
 }
 
 disableBtn();
-loadData();
+
