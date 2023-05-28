@@ -1,9 +1,12 @@
 import { Customer } from "../Modals/Customer.js";
-/* export class customerController{
+$(document).ready(()=>{
+loadICustData()
+})
+ /* export class customerController{
   constructor(){
-    $('#btnadd').click(this.saveCustomer);
-     $('#btnupdate').click(this.updateCustomer);
-      $('#btnDelete').click(this.deleteCustomer);
+    $('#btnadd').click(this.saveCustomer.bind(this));
+     $('#btnupdate').click(this.updateCustomer.bind(this));
+      $('#btnDelete').click(this.deleteCustomer.bind(this));
   }
   saveCustomer(){
     console.log("save Customer");
@@ -14,8 +17,14 @@ import { Customer } from "../Modals/Customer.js";
   deleteCustomer(){
     console.log("delete Customer");
   }
-} */
+}  */
 
+/*How Apply regex in to web */
+/* const regexNo=/^\d+$/;
+if(!regexNo.test(customer_id)){
+  console.log("Invalid Customer Id");
+}
+ */
 //dan meyawa use karanna pulwannn😊
 var customer = "CUSTOMER";
 
@@ -31,7 +40,7 @@ $("#btn-addcust").on("click", () => {
     }
     arr.push(initObj());
     localStorage.setItem(customer, JSON.stringify(arr));
-    loadData();
+    loadICustData();
     disableBtn();
     clearData();
   }
@@ -75,7 +84,7 @@ function initObj() {
 
 //-------------------load table data-------------------------------
 
-function loadData() {
+function loadICustData() {
   let per_data = localStorage.getItem(customer);
 
   $('table tbody tr td').remove();
@@ -84,7 +93,7 @@ function loadData() {
 
   if (per_data) {
     customer_data_arr.map((value) => {
-      var row =
+      let cRow =
         "<tr>" +
         "<td>" +
         value.customerId +
@@ -106,14 +115,13 @@ function loadData() {
         "</td>" +
         "</tr>";
 
-      $("#custTable").append(row);
+      $("#custTable").append(cRow);
     });
   }
 }
 
 //---------------add table row click event listener-------------------------
 
-loadData();
 
 $("table tbody").on("click", "tr", (event) => {
   $("#custID").val($(event.target).closest("tr").find("td").eq(0).text());
@@ -141,7 +149,7 @@ $("#btn-update").on("click", () => {
 
     cus_arr[index] = initObj();
     localStorage.setItem(customer, JSON.stringify(cus_arr));
-    loadData();
+    loadICustData();
     disableBtn();
     clearData();
     //arrIndex = -1;
@@ -160,7 +168,7 @@ $("#btn-removeCust").on("click", () => {
 
     cus_arr.splice(index, 1);
     localStorage.setItem(customer, JSON.stringify(cus_arr));
-    loadData();
+    loadICustData();
     disableBtn();
     clearData();
     cus_arr = -1;

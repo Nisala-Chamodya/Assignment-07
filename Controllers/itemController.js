@@ -1,3 +1,6 @@
+$(document).ready(()=>{
+loadItemData()
+})
 var item = "ITEM";
 //------------add new object into the localStorage---------------------------
 
@@ -12,7 +15,7 @@ $('#btn-item-add').on('click', () => {
         }
         arr.push(initObj());
         localStorage.setItem(item, JSON.stringify(arr));
-        loadData();
+        loadItemData();
         disableBtn();
         clearData();
     }
@@ -28,7 +31,7 @@ $('#btn-item-update').on('click', () => {
         item_arr[index] = initObj();
 
         localStorage.setItem(item, JSON.stringify(item_arr));
-        loadData();
+        loadItemData();
         disableBtn();
         clearData();
        // arrIndex = -1;
@@ -47,7 +50,7 @@ $('#btn-remove-item').on('click', () => {
 
         item_arr.splice(index, 1);
         localStorage.setItem(item, JSON.stringify(item_arr));
-        loadData();
+        loadItemData();
         disableBtn();
         clearData();
        // arrIndex = -1;
@@ -55,7 +58,7 @@ $('#btn-remove-item').on('click', () => {
 });
 //---------------add table row click event listener-------------------------
 
-loadData();
+//loadItemData();
 
 $('table tbody').on('click', 'tr', (event) => {
     $('#itemcode').val($(event.target).closest('tr').find('td').eq(0).text());
@@ -70,8 +73,10 @@ $('table tbody').on('click', 'tr', (event) => {
 });
 
 //-------------------load table data-------------------------------
-
-function loadData() {
+function loadItemData() {
+    console.log('====================================');
+    console.log('loading item');
+    console.log('====================================');
 
     let per_data = localStorage.getItem(item);
 
@@ -79,21 +84,19 @@ function loadData() {
 
     let item_data_arr = JSON.parse(per_data);
 
-    console.log("IIIIIIIIIIIIII: ", item_data_arr);
-    console.log("per_data: ", per_data);
 
     if(per_data){
         item_data_arr.map((value, index) => {
-            var row = "<tr>" +
+     
+            const itemRow = "<tr>" +
                 "<td>" + value.itemCode+ "</td>" +
                 "<td>" + value.itemName+ "</td>" +
                 "<td>" + value.price + "</td>" +
                 "<td>" + value.itemQTY + "</td>" +
                 "</tr>";
 
-            console.log('LLLLLL: ', $('#itemtbl'))
 
-            $('#itemtbl').append(row);
+            $('#itemtbl').append(itemRow);
         });
     }
 

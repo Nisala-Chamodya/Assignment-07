@@ -130,15 +130,7 @@
         z-index: 100;
       }
 
-      /* <section class="placeorder">
-        <div class="maincontainer">
-            <div class="invoice"></div>
-            <div class="itemselect"></div>
-            <div class="orderdetails"></div>
-        </div>
-        
-
-    </section>*/
+     
       #item-section {
         display: none;
       }
@@ -208,14 +200,7 @@
       <section class="customer" id="customer-section">
         <h1 class="customertopic">Manage Customer</h1>
 
-        <!---<nav class="navbar bg-body-tertiary container-fluid">
-        <div class="container-fluid align-items-center">
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-secondary" type="submit">Search</button>
-            </form>
-        </div>
-    </nav>-->
+       
 
         <div class="container-fluid px-4">
           <div class="row g-3 my-2">
@@ -286,35 +271,13 @@
                 </tr>
               </thead>
               <tbody>
-                <!-- <tr>
-                        <td id="cId"></td>
-                        <td id="cName"> </td>
-                        <td id="address"> </td>
-                        <td id="Salary"></td>
-                        <td id="gender"></td>
-                        <td id="age"></td>
-                    </tr>-->
+               
               </tbody>
             </table>
           </div>
         </div>
       </section>
-      <!-- <script>document.getElementById('btn-addcust').addEventListener('click', function () {
-
-                $("#custTable").append(`
-            <tr>
-                <td>${$("#custID").val()}</td>
-                <td>${$("#custname").val()}</td>
-                <td>${$("#custAddress").val()}</td> 
-                <td>${$("#Salary").val()}</td>
-                <td>${$("#inputGender").val()}</td>
-                <td>${$("#inputAge").val()}</td>
-            </tr>`);
-            })
-
-        </script>
-    
-
+     
 
     <br><br><br><br><br><br><br><br><br>
 
@@ -322,14 +285,7 @@
       <section class="item" id="item-section">
         <h1 class="itemtopic">Manage Item</h1>
 
-        <!---<nav class="navbar bg-body-tertiary container-fluid">
-        <div class="container-fluid align-items-center">
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-secondary" type="submit">Search</button>
-            </form>
-        </div>
-    </nav>-->
+        
 
         <div class="container-fluid px-4">
           <div class="row g-3 my-2">
@@ -394,31 +350,12 @@
                 </tr>
               </thead>
               <tbody>
-                <!-- <tr>
-                        <td id="cId"></td>
-                        <td id="cName"> </td>
-                        <td id="address"> </td>
-                        <td id="Salary"></td>
-                        <td id="gender"></td>
-                        <td id="age"></td>
-                    </tr>-->
+                
               </tbody>
             </table>
           </div>
         </div>
-        <!--  <script>document.getElementById('btn-additem').addEventListener('click', function () {
-
-                $("#itemtbl").append(`
-            <tr>
-                <td>${$("#itemcode").val()}</td>
-                <td>${$("#itemname").val()}</td>
-                <td>${$("#price").val()}</td>
-                <td>${$("#qty").val()}</td>
-                
-            </tr>`);
-            })
-
-        </script>-->
+        
       </section>
       <br />
       <!--Place Order-->
@@ -590,94 +527,13 @@
                 </tr>
 
               <tbody>
-                <!-- <tr>
-                <td id="cId"></td>
-                <td id="cName"> </td>
-                <td id="address"> </td>
-                <td id="Salary"></td>
-                <td id="gender"></td>
-                <td id="age"></td>
-            </tr>-->
+                
               </tbody>
             </table>
           </div>
         </div>
 
-        <!-- <script>
-            document.getElementById('btn-add').addEventListener('click', function () {
-                let price = document.getElementById("itempriceplaceorder").value;
-                let qty = document.getElementById("itemqtyplaceorder").value;
-                let tot = price * qty;
-                document.getElementById("total").innerHTML = tot;
-                let ftot = document.getElementById("total").value = tot;
-
-
-
-
-                console.log(tot);
-                $("#tblplaceorder").append(`
-    <tr>
-        <td>${$("#itemcodeplceorder").val()}</td>
-        <td>${$("#itemnameplaceorder").val()}</td>
-        <td>${$("#itempriceplaceorder").val()}</td>
-        <td>${$("#itemqtyplaceorder").val()}</td>
-        <td>${$("#total").val()}</td>
-     
-        
-        
-    </tr>`);
-            })
-
-
-
-        </script>-->
-
-        <!--        <script>
-            document.getElementById('btn-purchace').addEventListener('click', function () {
-                
-                    /*calculate discount */
-                    let price = document.getElementById("itempriceplaceorder").value;
-                    let discount = document.getElementById("discount").value / 100;
-                    let subtot = price - (price * discount)
-
-
-                    document.getElementById("subtotal").innerHTML = subtot;
-
-                    /*calculate cash*/
-                    let cash = document.getElementById("cash").value;
-                    let balance = cash - subtot;
-                    console.log(balance);
-
-                    document.getElementById("balance").innerHTML = balance;
-
-                    
-
-                  
-
-
-            })
-        </script>-->
-        <!-- <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-            <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
-              <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-            </symbol>
-            <symbol id="info-fill" fill="currentColor" viewBox="0 0 16 16">
-              <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
-            </symbol>
-            <symbol id="exclamation-triangle-fill" fill="currentColor" viewBox="0 0 16 16">
-              <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-            </symbol>
-          </svg>
-          
-         
-          <div class="alert alert-success d-flex align-items-center" role="alert">
-            <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
-            <div>
-              Order Place Successfully
-            </div>
-          </div>
-          
-          </div>-->
+       
       </section>
     </main>
 
@@ -687,6 +543,7 @@
     <!--COntroller Classrs-->
     <script src="Controllers/itemController.js" type="module"></script>
     <script src="Controllers/customerController.js" type="module"></script>
+    
     <script src="Controllers/orderController.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"
@@ -698,5 +555,9 @@
       integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
       crossorigin="anonymous"
     ></script>
+
+    <script>
+      
+    </script>
   </body>
 </html>
