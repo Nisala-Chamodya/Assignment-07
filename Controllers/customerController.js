@@ -1,8 +1,8 @@
 import { Customer } from "../Modals/Customer.js";
-$(document).ready(()=>{
-loadICustData()
-})
- /* export class customerController{
+$(document).ready(() => {
+  loadICustData();
+});
+/* export class customerController{
   constructor(){
     $('#btnadd').click(this.saveCustomer.bind(this));
      $('#btnupdate').click(this.updateCustomer.bind(this));
@@ -87,7 +87,8 @@ function initObj() {
 function loadICustData() {
   let per_data = localStorage.getItem(customer);
 
-  $('table tbody tr td').remove();
+  $("table tbody tr td").remove();
+  $("#custTable").empty();
 
   let customer_data_arr = JSON.parse(per_data);
 
@@ -122,8 +123,7 @@ function loadICustData() {
 
 //---------------add table row click event listener-------------------------
 
-
-$("table tbody").on("click", "tr", (event) => {
+$("#custTable").on("click", "tr", (event) => {
   $("#custID").val($(event.target).closest("tr").find("td").eq(0).text());
   $("#custname").val($(event.target).closest("tr").find("td").eq(1).text());
   $("#custAddress").val($(event.target).closest("tr").find("td").eq(2).text());
@@ -267,4 +267,3 @@ function disableBtn() {
 }
 
 disableBtn();
-
