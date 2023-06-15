@@ -1,564 +1,481 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css" />
-    <link rel="stylesheet" href="assets/bootstrap/js/bootstrap.min.js" />
-
-    <style>
-      * {
-        scroll-behavior: smooth;
-      }
-
-      .headersection {
-        position: fixed;
-        width: 1355px;
-        height: 50px;
-      }
-
-      main > h1 {
-        text-align: center;
-        top: -50px;
-        display: inline;
-        position: relative;
-        left: 550px;
-        top: -250px;
-        font-size: 3.2rem;
-        font-weight: 700;
-      }
-
-      span {
-        color: orange;
-      }
-
-      main > p {
-        position: relative;
-        left: 550px;
-        top: -250px;
-      }
-
-      .customertopic {
-        text-align: center;
-        color: orange;
-      }
-
-      .itemtopic {
-        text-align: center;
-        color: orange;
-      }
-
-      .placeordertopic {
-        text-align: center;
-        color: orange;
-      }
-
-      .maincontainer {
-        display: flex;
-        justify-content: space-around;
-        position: relative;
-      }
-
-      .invoice {
-        width: 350px;
-        height: 500px;
-        border: 2px solid black;
-      }
-
-      .itemselect {
-        width: 350px;
-        height: 500px;
-        border: 2px solid black;
-      }
-
-      .orderdetails {
-        width: 350px;
-        height: 500px;
-        border: 2px solid black;
-      }
-
-      .invoice > h3 {
-        color: white;
-        text-align: center;
-        background-color: #f97b22;
-      }
-
-      .itemselect > h3 {
-        color: white;
-        text-align: center;
-        background-color: #f97b22;
-      }
-
-      .total {
-        color: blue;
-        font-weight: bold;
-        font-size: 2.5rem;
-      }
-
-      .subtotal {
-        color: red;
-        font-weight: bold;
-        font-size: 2.5rem;
-      }
-
-      .total > span {
-        color: blue;
-        font-weight: bold;
-      }
-
-      .subtotal > span {
-        color: red;
-        font-weight: bold;
-      }
-
-      .balance {
-        color: #f97b22;
-        font-size: 2.5rem;
-        font-weight: bold;
-      }
-
-      .orderdetails > button > button {
-        display: flex;
-        justify-content: space-around;
-        margin-left: 250px;
-      }
-      .headersection {
-        width: 100%;
-        position: fixed;
-        z-index: 100;
-      }
-
-     
-      #item-section {
-        display: none;
-      }
-
-      #placeorder-section {
-        display: none;
-      }
-      #customer-section {
-        display: none;
-      }
-    </style>
+    <meta charset="UTF-8" />
+    <title>Point of Sale</title>
+    <link
+      rel="icon"
+      type="image/x-icone"
+      href="assets/icons/icons8-monitor-64.ico"
+    />
+    <link rel="stylesheet" href="assets/styles/Styles.css" />
+    <link rel="stylesheet" href="assets/fontsAwesome/css/all.css" />
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/styles/normalize.css" />
   </head>
-
   <body>
-    <!---Home Section design-->
-
-    <div class="headersection" id="header-section">
-      <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-        <a href="" class="navbar-brand">GROCI</a>
-        <button
-          class="navbar-toggler"
-          data-toggle="collapse"
-          data-target="#blacky"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div
-          class="collapse navbar-collapse justify-content-center"
-          id="blacky"
-        >
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a href="#" class="nav-link active" id="linkHome">Home</a>
+    <header>
+      <div>
+        <h1>Shop Faster With GROCI</h1>
+        <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+          <button
+            class="navbar-toggler"
+            data-toggle="collapse"
+            data-target="#data"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="collapse navbar-collapse justify-content-center"
+            id="data"
+          >
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a href="#" class="nav-link active" id="dash">Home</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link" id="cus">Customer</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link" id="itm">Item</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link" id="or">Place Order</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <!-- <aside>
+        <nav class="asside-nav">
+          <ul>
+            <li>
+              <a href="#" id="dash"
+                ><span><i class="fa-solid fa-house"></i>Home</span></a
+              >
             </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link" id="linkCustomer">Customer</a>
+            <li>
+              <a href="#" id="cus"
+                ><span
+                  ><i class="fa-solid fa-user"></i> Manage Customer</span
+                ></a
+              >
             </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link" id="linkItem">Item</a>
+            <li>
+              <a href="#" id="itm"
+                ><span
+                  ><i class="fa-solid fa-layer-group"></i>Manage Item</span
+                ></a
+              >
             </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link" id="linkplace">Place Order</a>
+            <li>
+              <a href="#" id="or"
+                ><span
+                  ><i class="fa-solid fa-bag-shopping"></i>Place Order</span
+                ></a
+              >
             </li>
           </ul>
-        </div>
-      </nav>
-    </div>
-    <main>
-      <section class="home" id="home">
-        <div class="pic">
-          <img
-            src="assets/images/main pic.jpg"
-            alt="main pic"
-            width="500px"
-            height="500px"
-            id="mainpic"
-          />
-        </div>
-        <main id="home-maincontent">
-          <h1>SHOP FASTER WITH <span>GROCI</span></h1>
-          <p>We Offer High Quality Groceries For You!</p>
-        </main>
-      </section>
-      <br /><br /><br /><br /><br /><br /><br /><br /><br />
-      <!--Customer section-->
+        </nav>
+      </aside> -->
+      <div id="template" class="template p-4">
+        <!--------------------Dashboard Form--------------------------------->
+        <section class="dashMane">
+          <section class="dash row g-3 m-0">
+            <div class="col-md-3">
+              <div>
+                <h5>Today Orders</h5>
+                <h6 id="todayOrders">55</h6>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div>
+                <h5>New Customers</h5>
+                <h6 id="totalCustomer">10</h6>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div>
+                <h5>Monthly Income</h5>
+                <h6>$ 4,562.5</h6>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div>
+                <h5>Today Earning</h5>
+                <h6 id="todayIncome">$ 187.5</h6>
+              </div>
+            </div>
+            <div class="col-12 p-0 ps-4">
+              <h2>Recent Orders</h2>
+            </div>
+            <div class="col-12 mt-0">
+              <table class="table" id="orderDetailTbl">
+                <thead>
+                  <th>Order ID</th>
+                  <th>Customer ID</th>
+                  <th>Customer Name</th>
+                  <th>Total</th>
+                  <th>Date</th>
+                  <th>Status</th>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </section>
+        </section>
+        <!--------------------Customer Form--------------------------------->
+        <section class="cusMane">
+          <h1>Customer Management</h1>
+          <form class="row g-3 myform">
+            <div class="col-md-6">
+              <label class="form-label">Customer ID</label>
+              <input
+                type="text"
+                name="id"
+                class="form-control"
+                id="id"
+                placeholder="C-001"
+              />
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Name</label>
+              <input
+                type="text"
+                name="name"
+                class="form-control"
+                id="name"
+                placeholder="Danapala"
+              />
+            </div>
+            <div class="col-12">
+              <label class="form-label">Address</label>
+              <input
+                type="text"
+                name="address"
+                class="form-control"
+                id="address"
+                placeholder="1234 Main St"
+              />
+            </div>
+            <div class="col-12">
+              <label class="form-label">Contact </label>
+              <input
+                type="tel"
+                name="tel"
+                class="form-control"
+                id="tel"
+                placeholder="+94 xxx xxxx"
+              />
+            </div>
+            <div class="col-12">
+              <button type="button" class="btn btn-primary" id="cusSaveBtn">
+                Save
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary bg-info border-info"
+                id="cusUpdateBtn"
+              >
+                Update
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary bg-danger border-danger"
+                id="cusDeleteBtn"
+              >
+                Delete
+              </button>
+            </div>
+          </form>
+          <br />
+          <form class="d-flex" role="search">
+            <input
+              class="form-control me-2 was-validated"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+              id="cusSearch"
+            />
+            <button class="btn btn-outline-success" type="submit">
+              Search
+            </button>
+          </form>
+          <br />
 
-      <section class="customer" id="customer-section">
-        <h1 class="customertopic">Manage Customer</h1>
-
-       
-
-        <div class="container-fluid px-4">
-          <div class="row g-3 my-2">
-            <form class="row g-3" id="custForm">
-              <div class="col-md-6">
-                <label for="custID" class="form-label">Customer ID</label>
-                <input type="text" class="form-control" id="custID" />
-              </div>
-              <div class="col-md-6">
-                <label for="custname" class="form-label">Name</label>
-                <input type="text" class="form-control" id="custname" />
-              </div>
-              <div class="col-12">
-                <label for="inputAddress" class="form-label">Address</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="custAddress"
-                  placeholder="1234 Main St"
-                />
-              </div>
-              <div class="col-md-6">
-                <label for="inputSalary" class="form-label">Salary</label>
-                <input type="text" class="form-control" id="Salary" />
-              </div>
-              <div class="col-md-4">
-                <label for="inputGender" class="form-label">Gender</label>
-                <select id="inputGender" class="form-select">
-                  <option selected>....</option>
-                  <option selected>Male</option>
-                  <option>Female</option>
-                </select>
-              </div>
-              <div class="col-md-2">
-                <label for="inputAge" class="form-label">Age</label>
-                <input type="text" class="form-control" id="inputAge" />
-              </div>
-              <div class="col-12">
-                <button type="button" class="btn btn-primary" id="btn-addcust">
-                  Add
-                </button>
-                <button type="submit" class="btn btn-success" id="btn-update">
-                  Update
-                </button>
-                <button type="reset" class="btn btn-danger" id="btn-removeCust">
-                  Delete
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-
-        <div class="row my-5 container-fluid">
-          <h3 class="fs-4 mb-3">All Customers</h3>
-          <div class="col">
-            <table
-              class="table bg-white rounded shadow-sm table-hover"
-              id="custTable"
-            >
+          <form class="row g-3 p-2">
+            <table class="table" id="customerTbl">
               <thead>
-                <tr>
-                  <th scope="col">Customer ID</th>
-                  <th scope="col">Name</th>
-                  <th scope="col">Address</th>
-                  <th scope="col">Salary</th>
-                  <th scope="col">Gender</th>
-                  <th scope="col">Age</th>
-                </tr>
+                <th>Customer ID</th>
+                <th>Customer Name</th>
+                <th>Customer Address</th>
+                <th>Customer Contact</th>
               </thead>
-              <tbody>
-               
-              </tbody>
+              <tbody></tbody>
             </table>
-          </div>
-        </div>
-      </section>
-     
-
-    <br><br><br><br><br><br><br><br><br>
-
-    <!-Item Section-->
-      <section class="item" id="item-section">
-        <h1 class="itemtopic">Manage Item</h1>
-
-        
-
-        <div class="container-fluid px-4">
-          <div class="row g-3 my-2">
-            <form class="row g-3" id="itemForm">
-              <div class="col-md-6">
-                <label for="itemcode" class="form-label">Item Code</label>
-                <input type="text" class="form-control" id="itemcode" />
+          </form>
+        </section>
+        <!--------------------Item Form--------------------------------->
+        <section class="itemMane">
+          <h1>Item Management</h1>
+          <form class="row g-3 myform">
+            <div class="col-md-6">
+              <label class="form-label">Item Code</label>
+              <input
+                type="text"
+                class="form-control"
+                id="itmCode"
+                placeholder="I-001"
+              />
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Description</label>
+              <input
+                type="text"
+                class="form-control"
+                id="itmDes"
+                placeholder="Any"
+              />
+            </div>
+            <div class="col-6">
+              <label class="form-label">Unit Price</label>
+              <input
+                type="text"
+                class="form-control"
+                id="unitPrice"
+                placeholder="Rs 125.00"
+              />
+            </div>
+            <div class="col-6">
+              <label class="form-label">Qty On Hand </label>
+              <input
+                type="tel"
+                class="form-control"
+                id="itmQty"
+                placeholder="123"
+              />
+            </div>
+            <div class="col-12">
+              <button type="button" class="btn btn-primary" id="itmSaveBtn">
+                Save
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary bg-info border-info"
+                id="itmUpdateBtn"
+              >
+                Update
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary bg-danger border-danger"
+                id="itmDeleteBtn"
+              >
+                Delete
+              </button>
+            </div>
+          </form>
+          <br />
+          <form class="d-flex" role="search">
+            <input
+              class="form-control me-2 was-validated"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+              id="itmSearch"
+            />
+            <button class="btn btn-outline-success" type="submit">
+              Search
+            </button>
+          </form>
+          <br />
+          <form class="row g-3 p-2">
+            <table class="table" id="itemTbl">
+              <thead>
+                <th>Item Code</th>
+                <th>Description</th>
+                <th>Unit Price</th>
+                <th>Qty On Hand</th>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </form>
+        </section>
+        <!--------------------Order Form--------------------------------->
+        <section class="orderMane">
+          <h1>Place Order</h1>
+          <form class="row g-3 myform">
+            <div class="row col-12">
+              <div class="col-3">
+                <label class="form-label">Order ID</label>
+                <label class="form-control" id="order_id">&nbsp;</label>
               </div>
-              <div class="col-md-6">
-                <label for="itemname" class="form-label">Name</label>
-                <input type="text" class="form-control" id="itemname" />
+              <div class="col-3">
+                <label class="form-label">Date</label>
+                <label class="form-control" id="date"></label>
               </div>
-              <div class="col-12">
-                <label for="price" class="form-label">price</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="price"
-                  placeholder="1234 Main St"
-                />
-              </div>
-              <div class="col-md-6">
-                <label for="qty" class="form-label">Item QTY</label>
-                <input type="number" class="form-control" id="qty" />
-              </div>
-              <div class="col-md-4">
-                <div class="col-12">
-                  <button class="btn btn-primary" id="btn-item-add" type="submit">Add</button>
+            </div>
+            <div class="col-md-2">
+              <label class="form-label">Customer ID</label>
+              <select id="customerCmb" class="form-select">
+                <option selected>Choose...</option>
+              </select>
+            </div>
+            <div class="col-md-3">
+              <label class="form-label">Name</label>
+              <label class="form-control" id="customer_name">&nbsp;</label>
+            </div>
+            <div class="col-md-4">
+              <label class="form-label">Address</label>
+              <label class="form-control" id="customer_address">&nbsp;</label>
+            </div>
+            <div class="col-md-3">
+              <label class="form-label">Contact</label>
+              <label class="form-control" id="customer_contact">&nbsp;</label>
+            </div>
+            <div class="col-md-2">
+              <label class="form-label">Item Code</label>
+              <select id="itemCodeCmb" class="form-select">
+                <option selected>Choose...</option>
+              </select>
+            </div>
+            <div class="col-md-4">
+              <label class="form-label">Description</label>
+              <label class="form-control" id="des">&nbsp;</label>
+            </div>
+            <div class="col-md-3">
+              <label class="form-label">Qty On Hand</label>
+              <label class="form-control" id="qty_on_hand">&nbsp;</label>
+            </div>
+            <div class="col-md-3">
+              <label class="form-label">Unit Price</label>
+              <label class="form-control" id="unit_price">&nbsp;</label>
+            </div>
+            <div class="col-md-5">
+              <label class="form-label">Qty</label>
+              <div class="row">
+                <div class="col-md-6" id="divQty">
+                  <input type="text" class="form-control" id="qty" />
+                </div>
+                <div class="col-6">
                   <button
-                    type="submit"
-                    class="btn btn-success"
-                    id="btn-item-update"
+                    type="button"
+                    class="btn btn-primary"
+                    id="orderAddBtn"
                   >
-                    Update
+                    Add
                   </button>
                   <button
-                    type="reset"
-                    class="btn btn-danger"
-                    id="btn-remove-item"
+                    type="button"
+                    class="btn btn-primary bg-danger border-danger"
+                    id="orderDeleteBtn"
                   >
                     Delete
                   </button>
                 </div>
               </div>
-            </form>
-          </div>
-        </div>
-        <div class="row my-5 container-fluid">
-          <h3 class="fs-4 mb-3">All Item</h3>
-          <div class="col">
-            <table
-              class="table bg-white rounded shadow-sm table-hover"
-              id="itemtbl"
-            >
+            </div>
+          </form>
+          <br />
+          <form class="row g-3 p-2">
+            <table class="table" id="orderTbl">
               <thead>
-                <tr>
-                  <th scope="col">Item Code</th>
-                  <th scope="col">Name</th>
-                  <th scope="col">price</th>
-
-                  <th scope="col">itemQTY</th>
-                </tr>
+                <th>Item Code</th>
+                <th>Description</th>
+                <th>Qty On Hand</th>
+                <th>unit Price</th>
+                <th>Qty</th>
+                <th>Total</th>
               </thead>
-              <tbody>
-                
-              </tbody>
+              <tbody></tbody>
             </table>
-          </div>
-        </div>
-        
-      </section>
-      <br />
-      <!--Place Order-->
-      <section class="placeorder" id="placeorder-section">
-        <h1 class="placeordertopic">Place Order</h1>
-
-        <div class="maincontainer">
-          <div class="invoice">
-            <h3>Invoice Details</h3>
-            <div class="input-group input-group-sm mb-3">
-              <span class="input-group-text" id="inputGroup-sizing-sm"></span>
-              <input
-                type="text"
-                class="form-control"
-                aria-label="Sizing example input"
-                aria-describedby="inputGroup-sizing-sm"
-                placeholder="orderId"
-                id="orderId"
-              />
-
+          </form>
+          <form class="row p-5">
+            <div class="col-12">
+              <button
+                type="button"
+                class="btn btn-primary w-25 position-absolute end-0 me-4 bg-success"
+                id="placeOrderBtn"
+              >
+                Place Order
+              </button>
             </div>
-
-            <div class="input-group input-group-sm mb-3">
-              <span class="input-group-text" id="inputGroup-sizing-sm"></span>
-              <select id="customerCMB" class="form-select">
-                <option selected>Choose...</option>
-              </select>
+          </form>
+        </section>
+        <!--------------------Recent Order Details Form--------------------------------->
+        <section class="orderDetailMane">
+          <section class="dash row g-3 m-0">
+            <h1 class="col-12 mt-0">Recent Order Details</h1>
+            <div class="col-12 mt-0">
+              <table class="table" id="tbl">
+                <thead>
+                  <th>Order ID</th>
+                  <th>Customer ID</th>
+                  <th>Customer Name</th>
+                  <th>Total</th>
+                  <th>Date</th>
+                  <th>Status</th>
+                </thead>
+                <tbody></tbody>
+              </table>
             </div>
-
-            <div class="input-group input-group-sm mb-3">
-              <span class="input-group-text" id="inputGroup-sizing-sm"></span>
-              <input
-                type="date"
-                class="form-control"
-                aria-label="Sizing example input"
-                aria-describedby="inputGroup-sizing-sm"
-                placeholder="Date"
-              />
-            </div>
-
-            <div class="input-group input-group-sm mb-3">
-              <span class="input-group-text" id="inputGroup-sizing-sm"></span>
-              <input
-                type="text"
-                class="form-control"
-                aria-label="Sizing example input"
-                aria-describedby="inputGroup-sizing-sm"
-                placeholder="Name"
-                id="customerNameOrder"
-              />
-            </div>
-            <div class="input-group input-group-sm mb-3">
-              <span class="input-group-text" id="inputGroup-sizing-sm"></span>
-              <input
-                type="text"
-                class="form-control"
-                aria-label="Sizing example input"
-                aria-describedby="inputGroup-sizing-sm"
-                placeholder="Address"
-                id="customerAddressOrder"
-              />
-            </div>
-          </div>
-          <div class="itemselect">
-            <h3>Item Select</h3>
-            <div class="input-group input-group-sm mb-3">
-              <span class="input-group-text" id="inputGroup-sizing-sm"></span>
-              <select id="itemCMB" class="form-select">
-                <option selected>Choose...</option>
-              </select>
-            </div>
-
-            <div class="input-group input-group-sm mb-3">
-              <span class="input-group-text" id="inputGroup-sizing-sm"></span>
-              <input
-                type="text"
-                class="form-control"
-                aria-label="Sizing example input"
-                aria-describedby="inputGroup-sizing-sm"
-                placeholder="Item Name"
-                id="itemnameplaceorder"
-              />
-            </div>
-
-            <div class="input-group input-group-sm mb-3">
-              <span class="input-group-text" id="inputGroup-sizing-sm"></span>
-              <input
-                type="text"
-                class="form-control"
-                aria-label="Sizing example input"
-                aria-describedby="inputGroup-sizing-sm"
-                placeholder="Price"
-                id="itempriceplaceorder"
-              />
-            </div>
-
-            <div class="input-group input-group-sm mb-3">
-              <span class="input-group-text" id="inputGroup-sizing-sm"></span>
-              <input
-                type="number"
-                class="form-control"
-                aria-label="Sizing example input"
-                aria-describedby="inputGroup-sizing-sm"
-                placeholder="QTY"
-                id="itemqtyplaceorder"
-              />
-            </div>
-          </div>
-          <div class="orderdetails">
-            <p class="total">TOTAL : <span id="total">0/=</span></p>
-            <p class="subtotal">SUBTOTAL:<span id="subtotal">0/=</span></p>
-
-            <div class="input-group input-group-sm mb-3">
-              <span class="input-group-text" id="inputGroup-sizing-sm"></span>
-              <input
-                type="text"
-                class="form-control"
-                aria-label="Sizing example input"
-                aria-describedby="inputGroup-sizing-sm"
-                placeholder="Cash"
-                id="cash"
-              />
-            </div>
-
-            <div class="input-group input-group-sm mb-3">
-              <span class="input-group-text" id="inputGroup-sizing-sm"></span>
-              <input
-                type="number"
-                class="form-control"
-                aria-label="Sizing example input"
-                aria-describedby="inputGroup-sizing-sm"
-                placeholder="Discount"
-                id="discount"
-              />
-            </div>
-
-            <div class="input-group input-group-sm mb-3">
-              <span class="input-group-text" id="inputGroup-sizing-sm"></span>
-            </div>
-            <button type="button" class="btn btn-primary" id="btn-add-cart">
-              Add
-            </button>
-            <button
-              type="button"
-              class="btn btn-success"
-              id="btn-purchace"
-              data-toggle="modal"
-              data-target="#basicmodal"
-            >
-              Purchace
-            </button>
-            <p class="balance">Balance:<span id="balance">0/=</span></p>
-          </div>
-        </div>
-
-        <div class="row my-5 container">
-          <div class="col">
-            <table
-              class="table bg-white rounded shadow-sm table-hover"
-              id="tblplaceorder"
-            >
-
-                <tr>
-                  <th scope="col">Item Code</th>
-                  <th scope="col">Item Name</th>
-                  <th scope="col">price</th>
-                  <th scope="col">QTY</th>
-                  <th scope="col">Total</th>
-                </tr>
-
-              <tbody>
-                
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-       
-      </section>
+          </section>
+        </section>
+      </div>
     </main>
-
-    <script src="assets/lib/jquery-3.6.4.min.js "></script>
-    <script src="assets/script.js"></script>
-
-    <!--COntroller Classrs-->
-     <script src="Controllers/customerController.js" type="module"></script>
-    <script src="Controllers/itemController.js" type="module"></script>
-   
-    
-    <script src="Controllers/orderController.js"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"
-      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"
-      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-      crossorigin="anonymous"
-    ></script>
-
+    <script src="assets/lib/jquery-3.6.4.min.js"></script>
+    <script src="controller/MainController.js" type="module"></script>
+    <script src="controller/DashBoardController.js" type="module"></script>
+    <script src="controller/CustomerController.js" type="module"></script>
+    <script src="controller/ItemController.js" type="module"></script>
+    <script src="controller/OrderController.js" type="module"></script>
+    <script src="db/DB.js" type="module"></script>
     <script>
-      
+      var oldBtn;
+
+      let allHide = () => {
+        $(".dashMane").css({ display: "none" });
+        $(".cusMane").css({ display: "none" });
+        $(".itemMane").css({ display: "none" });
+        $(".orderMane").css({ display: "none" });
+        $(".orderDetailMane").css({ display: "none" });
+      };
+
+      let showContainer = (container, btn) => {
+        allHide();
+        $(container).css({ display: "block" });
+        //setStyle(btn);
+        oldBtn = id;
+      };
+      allHide();
+      $(".dashMane").css({ display: "block" });
+
+      ///loadHtmlFile('dashboard', 'dash');
+
+      function loadHtmlFile(file, id) {
+        setStyle(id);
+        $("#template").load("../view/" + file + ".html");
+        oldBtn = id;
+      }
+
+      function setStyle(id) {
+        if (oldBtn != undefined) {
+          $("#" + oldBtn).css({
+            background: "#dfe4ea",
+            color: "#485460",
+            boxShadow: "none",
+          });
+        }
+
+        $("#" + id).css({
+          background: "#0652DD",
+          color: "white",
+          boxShadow: "2px 2px 8px gray",
+        });
+      }
     </script>
   </body>
 </html>
